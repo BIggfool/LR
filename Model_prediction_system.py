@@ -12,9 +12,6 @@ def run():
     st.image(img1,use_column_width=False)
     st.title("Automatic Loan status prediction")
 
-    ## Account No
-    account_no = st.text_input('Account number')
-
     ## Full Name
     fn = st.text_input('Full Name')
 
