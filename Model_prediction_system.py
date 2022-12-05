@@ -42,7 +42,7 @@ def run():
     co_mon_income = st.number_input("Co-Applicant's Monthly Income($)",value=0)
 
     ## Loan AMount
-    loan_amt = st.number_input("Loan Amount in thousands",value=0)
+    loan_amt = st.number_input("Loan Amount (in thousands$)",value=0)
 
     ## loan duration
     dur_display = ['2 Month','6 Month','8 Month','1 Year','16 Month']
