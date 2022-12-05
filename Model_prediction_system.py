@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import pickle
+import numpy as np
 
 
 model = pickle.load(open('./Loan_prediction.pkl', 'rb'))
@@ -11,6 +12,8 @@ def run():
     st.image(img1,use_column_width=False)
     st.title("Automatic Loan status prediction")
 
+    ## Account No
+    account_no = st.text_input('Account number')
 
     ## Full Name
     fn = st.text_input('Full Name')
@@ -63,6 +66,9 @@ def run():
             duration = 480
         Income_loan_amount_ratio = (mon_income+co_mon_income)/loan_amt
         features = [[mar,edu,duration, cred, prop, loan_amt, Income_loan_amount_ratio]]
+        features[0][-1] = np.log(features[0][-1])
+        features[0][-2] = np.log(features[0][-2])
+
         print(features)
         prediction = model.predict(features)
         lc = [str(i) for i in prediction]
@@ -70,13 +76,13 @@ def run():
         if ans == 0:
             st.error(
                 "Hello: " + fn + ' || '
-          
+                "Account number: "+account_no + ' || '
                 'According to our Calculations, you will not get the loan from Bank'
             )
         else:
             st.success(
                 "Hello: " + fn +  ' || '
-               
+                "Account number: "+account_no + ' || '
                 'Congratulations!! You are eligible to apply for the loan!'
             )
 
