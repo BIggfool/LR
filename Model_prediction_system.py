@@ -82,7 +82,7 @@ def run():
                 
                 'According to our Calculations, you will not get the loan from Bank'
             )
-        else:
+        elif ans ==1:
             st.success(
                 "Hello: " + fn +  ' || '
                
