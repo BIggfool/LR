@@ -63,12 +63,6 @@ def run():
             duration = 480
         Income_loan_amount_ratio = (mon_income+co_mon_income)/loan_amt
         features = [[mar,edu,duration, cred, prop, loan_amt, Income_loan_amount_ratio]]
-        if loan_amt>=1000:
-            st.error(
-                "Hello: " + fn + ' || '
-                
-                'For your loan amount is too high,Please contact our mannual staff to confirm')
-        break
         features[0][-1] = np.log(features[0][-1])
         features[0][-2] = np.log(features[0][-2])
 
@@ -76,7 +70,13 @@ def run():
         prediction = model.predict(features)
         lc = [str(i) for i in prediction]
         ans = int("".join(lc))
-        if ans == 0:
+        if loan_amt>=np.log(1000):
+            st.error(
+                "Hello: " + fn + ' || '
+                
+                'For your loan amount is too high,Please contact our mannual staff to confirm')
+        
+        elif ans == 0:
             st.error(
                 "Hello: " + fn + ' || '
                 
