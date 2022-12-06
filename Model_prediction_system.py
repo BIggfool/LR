@@ -8,7 +8,7 @@ model = pickle.load(open('./Loan_prediction.pkl', 'rb'))
 
 def run():
     img1 = Image.open('Loan.jpg')
-    img1 = img1.resize((700,200))
+    img1 = img1.resize((150,200))
     st.image(img1,use_column_width=False)
     st.title("Automatic Loan status prediction")
 
