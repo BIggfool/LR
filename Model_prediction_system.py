@@ -70,7 +70,7 @@ def run():
         prediction = model.predict(features)
         lc = [str(i) for i in prediction]
         ans = int("".join(lc))
-        if loan_amt>=np.log(1000):
+        if loan_amt>=1000:
             st.error(
                 "Hello: " + fn + ' || '
                 
