@@ -63,6 +63,11 @@ def run():
             duration = 480
         Income_loan_amount_ratio = (mon_income+co_mon_income)/loan_amt
         features = [[mar,edu,duration, cred, prop, loan_amt, Income_loan_amount_ratio]]
+        if loan_amt>=1000:
+            st.error(
+                "Hello: " + fn + ' || '
+                
+                'In case of large loam amout,Please contact our mannual staff to confirm')
         features[0][-1] = np.log(features[0][-1])
         features[0][-2] = np.log(features[0][-2])
 
