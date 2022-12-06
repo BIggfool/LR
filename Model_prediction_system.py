@@ -68,7 +68,7 @@ def run():
                 "Hello: " + fn + ' || '
                 
                 'For your loan amount is too high,Please contact our mannual staff to confirm')
-            break
+        break
         features[0][-1] = np.log(features[0][-1])
         features[0][-2] = np.log(features[0][-2])
 
