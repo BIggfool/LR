@@ -67,7 +67,8 @@ def run():
             st.error(
                 "Hello: " + fn + ' || '
                 
-                'In case of large loam amout,Please contact our mannual staff to confirm')
+                'For your loan amount is too high,Please contact our mannual staff to confirm')
+            break
         features[0][-1] = np.log(features[0][-1])
         features[0][-2] = np.log(features[0][-2])
 
