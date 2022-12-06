@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 
 
-model = pickle.load(open('./Loan_prediction(1).pkl', 'rb'))
+model = pickle.load(open('./Loan_prediction (1).pkl', 'rb'))
 
 def run():
     img1 = Image.open('Loan.jpg')
